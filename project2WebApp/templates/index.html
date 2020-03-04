@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="shortcut icon" href="#">
+        <title>Project 3</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+        
+    <body>   
+      
+      <!--Nav bar -->
+      <nav id="navbarContainer" class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <a class="navbar-brand" href="#">Project 3</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><a href="#">Parameters</a></li>
+                <li><a href="#graphs">Graphs</a></li>
+                <li><a href="#map">Map</a></li>
+                <li><a href="#blurb">About</a></li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+
+        <!--Title-->
+        <div id = "title" class="container-xl">
+          <h1 id = "titleBG" class="text-center">Air Quality Data</h1>
+        </div>
+        <div>{{r}}</div>
+
+        <!--Graphs-->
+        <div id = "graphs">
+          <div class="jumbotron">
+            <div id = "graphState" class="container">
+              <h2 class="display-4">O3 Levels per State</h2>
+            </div>
+        </div>
+        <div class="jumbotron">
+          <div id = "graphStateMax" class="container">
+            <h2 class="display-4">States with the most 03</h2>
+          </div>
+        </div>
+        <div class="jumbotron">
+          <div id = "graphStateMin" class="container">
+            <h2 class="display-4">States with the least 03</h2>
+          </div>
+        </div>
+
+        <div class="jumbotron">
+          <div id = "map" class="container">
+            <h2 class="display-4">Map: </h2>
+          </div>
+        </div>
+
+        <div class="jumbotron">
+          <div id = "blurb" class="container">
+            <h2 class="display-4">About O3: </h2>
+            <p>
+              Ozone (O3) is a highly reactive gas composed of three oxygen atoms. 
+              Many people mistakenly believe that tropospheric ozone concentrations are high only in major urban areas, but high ambient ozone concentrations can and do occur anywhere. 
+              Ozone has two properties of interest to human health. First, it absorbs UV light, reducing human exposure to harmful UV radiation that causes skin cancer and cataracts. 
+              Second, when inhaled, it reacts chemically with many biological molecules in the respiratory tract, leading to a number of adverse health effects.
+            </p>
+          </div>
+        </div>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="/static/js/logic.js"></script>
+    </body>
+</html>

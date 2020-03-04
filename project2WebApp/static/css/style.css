@@ -1,0 +1,29 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F6F6F2;
+}
+
+#title {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    color: #282F31;
+}
+
+.jumbotron {
+    background: #6FB3B8;
+    color: #282F31;
+}
+
+#graphState {
+    margin-top: 2px;
+}
+
+#centerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
