@@ -8,6 +8,7 @@
         <link rel="shortcut icon" href="#">
         <title>Project 3</title>
         <link rel="stylesheet" href="/static/css/style.css">
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     </head>
         
     <body>   
@@ -32,14 +33,16 @@
                 <a class="dropdown-item" href="{{url_for('graph', param = 'PM2')}}">PM2</a>
                 <a class="dropdown-item" href="{{url_for('graph', param = 'PM10')}}">PM10</a>
                 <a class="dropdown-item" href="{{url_for('graph', param = 'SO2')}}">SO2</a>
-                <a class="dropdown-item" href="#">Temp</a>
               </div>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="#aboutProj">Acerca del Proyecto<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#graphs">Gráficas<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="#map">Mapa<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#blurb">Predicción<span class="sr-only">(current)</span></a>
             </li>
           </ul>
         </div>
@@ -47,43 +50,42 @@
 
         <!--Title-->
         <div id = "title" class="container-xl">
-          <h1 id = "titleBG" class="text-center">Datos de Calidad del Aire</h1>
+          <h1 id = "titleBG" class="text-center">{{param}} Data</h1>
         </div>
         <div>{{r}}</div>
 
-        <!--About project-->
-        <div class="jumbotron">
-          <h2 id = "aboutProj" class="text-left">
-            En este proyecto analizamos registros de calidad del aire en diversos estados
-            del país. Los datos provienen del Sistema Nacional de Información de Calidad del Aire (SINAICA).
-          </h2>
-          <br>
-          <hr>
-          <br>
-          <h2 id = "aboutProj" class="text-left">
-            Parámetros:
-          </h2>
-          <ul id = "parametros" class="list-group-flush">
-            <li class="list-group-item">Dióxido de Azufre (SO2)</li>
-            <li class="list-group-item">Ozono (O3)</li>
-            <li class="list-group-item">Monóxido de Carbono (CO)</li>
-            <li class="list-group-item">Dióxido de Nitrógeno (NO2)</li>
-            <li class="list-group-item">Partículas menores a 2.5 micrómetros (PM2)</li>
-            <li class="list-group-item">Partículas menores a 10 micrómetros (PM10)</li>
-          </ul>
+        <!--Graphs-->
+        <div id = "graphs">
+          <div class="jumbotron">
+            <div id = "graphState" class="container">
+              <h2 class="display-4">{{param}} Niveles por Estado</h2>
+            </div>
         </div>
-        <br>
-        <hr>
-        <br>
         <div class="jumbotron">
-          <div id = "map" class="container">
-            <h2 class="display-4">Estaciones: </h2>
-            <iframe class="map", src="/get_map_home" width="1100" height="600"></iframe>
+          <div id = "graphStateMax" class="container">
+            <h2 class="display-4">Estados con la mayor cantidad de {{param}}</h2>
+          </div>
+        </div>
+        <div class="jumbotron">
+          <div id = "graphStateMin" class="container">
+            <h2 class="display-4">Estados con la menor cantidad de {{param}}</h2>
           </div>
         </div>
 
+        <div class="jumbotron">
+          <div id = "map" class="container">
+            <h2 class="display-4">Mapa: </h2>
+            <iframe class="map", src="/get_map" width="1100" height="600"></iframe>
+          </div>
+        </div>
+
+        <div class="jumbotron">
+          <h2 class="display-4">Predicción {{param}}: </h2>
+          <div id = "graphPrediction" class="container"></div>
+        </div>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="/static/js/logic.js"></script>
+        <script src="/static/js/predictions.js"></script>
     </body>
 
     <!---------------------IMPORTS-------------------------->

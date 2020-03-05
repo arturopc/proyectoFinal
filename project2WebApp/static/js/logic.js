@@ -54,7 +54,7 @@ let consigue = () => {
 
     }).then(
         data => {
-        console.log(data.map(item => item.valororig))
+        //console.log(data.map(item => item.valororig))
         //-------------------------------------------------------
         //--------------------First Graph------------------------
         //-------------------------------------------------------
@@ -189,4 +189,5 @@ let consigue = () => {
             .attr("fill", "#DE805A");
     }).catch(error => console.log(error))
 }
+
 d3.select(window).on("load", consigue());

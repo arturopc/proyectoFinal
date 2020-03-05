@@ -4,6 +4,8 @@ html {
 
 body {
     background-color: #F6F6F2;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 #title {
@@ -12,8 +14,17 @@ body {
     color: #282F31;
 }
 
+#aboutProj {
+    margin-left: 10%;
+    margin-right: 10%;
+    color: #282F31;
+}
+
+#parametros {
+    background-color: #F6F6F2;
+} 
 .jumbotron {
-    background: #6FB3B8;
+    background: #F6F6F2;
     color: #282F31;
 }
 
