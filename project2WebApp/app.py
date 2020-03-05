@@ -60,7 +60,7 @@ def getPrediction():
     #Database object
     con = psycopg2.connect(db)  
     cursor = con.cursor() 
-    cursor.execute(f"SELECT valororig, nombre_x, pronostico, estado FROM {table} ORDER BY valororig DESC;")
+    cursor.execute(f"SELECT valororig, nombre_x, pronostico, estado FROM {table};")
     #The following was made in order to convert the response to JSON
     columns = ("valororig", "nombre", "pronostico", "parametro")
     results = []
@@ -78,7 +78,6 @@ def get_map():
     foliumMap = folium.Map(location=[centerLat,centerLon],zoom_start=5)
     for i, row in mapDf.iterrows():
         valor = row.valororig
-
         popupTtext=f"<b> Nombre:</b>{row.nombre}<br><b> Ciudad:</b>{row.city}<br><b> Valor:</b>{round(row.valororig, 2)}<br>"
         folium.CircleMarker(location=[row.lat,row.long], radius=5, tooltip=popupTtext, fill=True, fill_capacity=.4).add_to(foliumMap)
     foliumMap.save('templates/map.html')

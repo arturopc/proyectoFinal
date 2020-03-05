@@ -8,7 +8,7 @@
 let svgPredict = d3
     .select("#graphPrediction")
     .append("svg")
-    .attr("height", svgHeight + 270)
+    .attr("height", svgHeight + 170)
     .attr("width", svgWidth + 100)
 let chartGroupPredict = svgPredict
     .append("g")
